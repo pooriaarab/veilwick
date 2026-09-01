@@ -1,0 +1,17 @@
+node_modules/
+.turbo/
+.next/
+.open-next/
+.wrangler/
+.dev.vars
+**/.dev.vars
+**/.wrangler/
+*.log
+*.tsbuildinfo
+.DS_Store
+dist/
+coverage/
+.env*.local
+
+# agent worktrees
+.worktrees/

@@ -1,0 +1,14 @@
+# Default reviewers — change to your team handle when forking.
+# Some paths below land in later PRs (rate-limit.ts, webhooks/, billing/, storage.rules).
+# CODEOWNERS pattern matching is a no-op for missing paths, so they're safe to list now.
+*                                       @pooriaarab
+
+# Security-sensitive areas require security review.
+apps/web/src/lib/auth/                  @pooriaarab
+apps/web/src/lib/create-api-handler.ts  @pooriaarab
+apps/web/src/lib/rate-limit.ts          @pooriaarab
+apps/web/src/lib/webhooks/              @pooriaarab
+apps/web/src/lib/billing/               @pooriaarab
+apps/web/firestore.rules                @pooriaarab
+apps/web/storage.rules                  @pooriaarab
+.github/workflows/                      @pooriaarab

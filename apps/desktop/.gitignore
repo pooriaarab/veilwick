@@ -1,0 +1,12 @@
+# Tauri build artifacts
+src-tauri/target/
+src-tauri/gen/
+node_modules/
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp

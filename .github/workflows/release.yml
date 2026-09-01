@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'pooriaarab'
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: bun install
+      - name: Create release PR or publish changelog
+        uses: changesets/action@v1
+        # No `publish:` step — all packages are private (`access: "restricted"`).
+        # The root `release` script (`changeset publish`) is template-only; consumers
+        # who go public should add `publish: bun run release` plus an `NPM_TOKEN` secret.
+        with:
+          version: bun run version
+          commit: "chore: version packages"
+          title: "chore: version packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

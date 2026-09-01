@@ -1,0 +1,18 @@
+{
+  "app": {
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": false,
+        "width": 390,
+        "height": 844
+      }
+    ]
+  },
+  "bundle": {
+    "iOS": {
+      "developmentTeam": "MASTER_TEMPLATE_IOS_TEAM_ID",
+      "minimumSystemVersion": "16.0"
+    }
+  }
+}

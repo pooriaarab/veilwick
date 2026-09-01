@@ -1,0 +1,38 @@
+{
+  "name": "veilwick",
+  "version": "0.1.0",
+  "private": true,
+  "description": "NSFW spicy wellness feed + livestream - synthetic realistic",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "workers/*"
+  ],
+  "scripts": {
+    "dev": "bun run --filter @veilwick/web dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "db:generate": "bun run --filter @veilwick/web db:generate",
+    "db:migrate:local": "bun run --filter @veilwick/web db:migrate:local",
+    "preview": "bun run --filter @veilwick/web preview",
+    "deploy:web": "bun run --filter @veilwick/web deploy",
+    "phase4:local": "bun run typecheck && bun run test && bun run --filter @veilwick/web db:migrate:local && bun run --filter @veilwick/web build:worker",
+    "phase4:dry-run": "bun run --filter @veilwick/web build:worker && cd apps/web && bunx wrangler deploy -c cloudflare/app-worker/wrangler.jsonc --dry-run --env=\"\"",
+    "cf:provision": "./scripts/provision-cloudflare.sh",
+    "assert:no-firebase": "./scripts/assert-no-firebase.sh",
+    "test:e2e": "bun run --filter @veilwick/web test:e2e"
+  },
+  "packageManager": "bun@1.3.9",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "turbo": "^2.8.15",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "zod": "^4.5.4"
+  }
+}

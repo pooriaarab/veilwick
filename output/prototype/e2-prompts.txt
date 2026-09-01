@@ -1,0 +1,162 @@
+# VeilWick — Your New Stepsister E2 — 6×5s Prompts (Draft, DO NOT GENERATE YET)
+# Status: prepared 2026-09-01, awaits user approval before wavespeed run. Local only, no remote.
+# Episode: E2 continuation of E1 — same synthetic adult woman 18+ clothed, same house (hallway/bedroom/kitchen), next morning escalation.
+# Duration: 6 × 5s = 30s stitched (31.08s actual with H3 pad). Resolution: 768p native → 720×1280 9:16 lanczos (H3 768p = 768×1344 raw).
+# Model: wavespeed-ai/minimax-h3/image-to-video-lora, $0.25 / 5s, duration:5 resolution:768p, image+last_image stitch.
+# Heat: 2–3, clothed wellness/fashion, non-explicit, synthetic 18+, fade-to-black suggestive — no nudity / no explicit act / no genitalia.
+# Source beats: docs/prompts.md §2a 12-beat next beats after E1 (E1 used 1,3,5,6,7,8+12). E2 escalates via adhesion→temptation→crisis→plan/execution→HEA.
+# Character lock: repeat hair/outfit/setting tokens verbatim + /tmp/MysticXXX_MMH3-V4.safetensors if H3 loras path succeeds (prompt-only fallback documented generation-log §5/§13). LUT cinematic_warm.
+# Stitch: S(n).lastFrame → S(n+1).firstFrame via H3 last_image. Uses existing 720×1280 stills: first.jpg / last.jpg / poster.jpg (no new stills needed). Reuses E1 poster as E2 S1 entry point for continuity.
+# Negative tail embedded (H3 has no separate negative_prompt): low quality, blurry, deformed, cartoon, illustration, duplicate, watermark, nude, naked, topless, explicit, genitalia
+# Compilation tag per prompt required for feed indexing: compilation: your-new-stepsister-e2
+
+EPISODE: your-new-stepsister-e2
+TITLE: Your New Stepsister E2 — The Next Morning
+LOGLINE: The morning after the first night. Boxes still in the hall, but the distance is gone. Six beats of closer proximity — same threshold, tighter frame, one interruption that tests the choice.
+TAGLINE: "You stayed. Now what do we do with the hallway?"
+DURATION: 30s (6 × 5s)
+RESOLUTION: 720×1280 9:16 vertical (768p raw 768×1344 → lanczos scale)
+HEAT: 2–3 clothed, tension escalation over E1 — proximity tighter each scene, still fade-to-black before any explicit act
+PHASE MAP: S1 Exposition (0–5) → S2 Tease (5–10) → S3 Escalation (10–15) → S4 Escalation peak (15–20) → S5 Crisis/Retreat (20–25) → S6 Afterglow Tag (25–30)
+STILLS: /storyboard/pick-your-new-stepsister-e1-first.jpg (720×1280) /storyboard/pick-your-new-stepsister-e1-last.jpg (720×1280) /storyboard/pick-your-new-stepsister-e1-poster.jpg (720×1280)
+
+---
+
+## S1 — E2 S1: Morning After / Adhesion (0:00–0:05)
+BEAT: 2 Meet-cute callback + 4 Adhesion (forced proximity, next morning)
+PHASE: Phase 1 Exposition reprise — same hallway, morning light, closer framing than E1 S1
+HEAT: Heat 2 — suggestive, fully clothed
+EROTIC: Proximity tighter (shared frame from start) · Vulnerability: she stayed, soft smile acknowledging last night · Power: mutual, host relaxes
+ANGLE: waist-height medium shot eye level
+POV: over-shoulder eye level (viewer as housemate, now familiar)
+LIGHTING: bright daylight — clean morning window bounce, cooler but warm domestic palette, high key
+DURATION: 5s  RESOLUTION: 720×1280 9:16  CAMERA: static locked tripod
+TAGS: forbidden-domestic, morning-after, adhesion, clothed, Heat 2
+FIRST_FRAME: /storyboard/pick-your-new-stepsister-e1-poster.jpg
+LAST_FRAME: /storyboard/pick-your-new-stepsister-e1-first.jpg
+PROMPT:
+cinematic, synthetic adult woman 18+ clothed in cream knit co-ord and soft linen robe open over loungewear, morning hallway with moving boxes pushed aside and doorway, gentle eye contact across threshold next-morning soft smile "you stayed", warm domestic palette tactile linen weave, vertical 9:16 720x1280, 5s duration, static camera locked tripod no movement, photorealistic 8k, shallow depth of field f/2.0 35mm lens, soft natural daylight bright window bounce, teal shadows lifted cinematic_warm LUT, natural skin texture detailed pores, volumetric dust motes, shallow DOF bokeh, suggestive but clothed wellness Heat 2 — negative: low quality, blurry, deformed, cartoon, illustration, duplicate, watermark, nude, naked, topless, explicit, genitalia — compilation: your-new-stepsister-e2 | tags: adhesion, morning-after, clothed, eye-level, soft-natural-daylight | duration: 5s | camera: static | res: 720x1280 9:16
+
+---
+
+## S2 — E2 S2: Closer Tension (0:05–0:10)
+BEAT: 3 No-way / Tension revisited (higher stakes — now they know)
+PHASE: Phase 2 Tease — dialogue + micro-hold, camera lingers on hands/eyes not body
+HEAT: Heat 2 — suggestive, clothed, one breath between beats
+EROTIC: Proximity: shared frame, laundry buffer now thinner · Vulnerability: hesitation with familiarity (she lets him see nerves) · Power: pause she holds then invites
+ANGLE: waist-height medium shot eye level, soft bokeh foreground
+POV: handheld breathing over-shoulder
+LIGHTING: soft warm — diffused window + coral domestic tone, teal shadows lifted
+DURATION: 5s  RESOLUTION: 720×1280 9:16  CAMERA: slow bob subtle handheld with breathing micro head bob
+TAGS: tension-escalated, laundry, doorway, clothed, Heat 2
+FIRST_FRAME: /storyboard/pick-your-new-stepsister-e1-first.jpg
+LAST_FRAME: /storyboard/pick-your-new-stepsister-e1-last.jpg
+PROMPT:
+cinematic, synthetic adult woman 18+ clothed in ecru knit co-ord holding folded laundry closer to chest hallway doorway, hesitant glance that holds a second longer, soft sheets bedroom background, breathy stillness one breath between beats "You're closer than I expected.", vertical 9:16 720x1280, 5s duration, slow bob subtle handheld with breathing micro head bob, photorealistic 8k, shallow depth of field f/2.0, soft warm light diffused window golden, over-shoulder POV eye level, clothed wellness Heat 2 — negative: low quality, blurry, deformed, cartoon, illustration, duplicate, watermark, nude, naked, topless, explicit — compilation: your-new-stepsister-e2 | tags: tension-escalated, folded-laundry, clothed | duration: 5s | camera: slow bob | res: 720x1280 9:16
+
+---
+
+## S3 — E2 S3: Temptation Reciprocal (0:10–0:15)
+BEAT: 5 Temptation (intensified — reciprocal touch, consent check)
+PHASE: Phase 2→3 Tease → Escalation escalation
+HEAT: Heat 3 — intentional touch, clothed, consent beat required
+EROTIC: Proximity: touch-point reciprocal (hand on shoulder → hair tuck, both directions) · Vulnerability: she asks, he answers (Is this okay? Nod) · Power: she leads then yields, swap begins
+ANGLE: high-angle close-up 35mm face + shoulders
+POV: eye-contact intimate wellness
+LIGHTING: soft warm — diffused window + cinematic_warm LUT teal shadows orange highlights lifted blacks
+DURATION: 5s  RESOLUTION: 720×1280 9:16  CAMERA: slow bob subtle handheld with breathing
+TAGS: temptation, reciprocal-touch, consent-beat, clothed, Heat 3
+FIRST_FRAME: /storyboard/pick-your-new-stepsister-e1-last.jpg
+LAST_FRAME: /storyboard/pick-your-new-stepsister-e1-last.jpg
+PROMPT:
+cinematic, synthetic adult woman 18+ clothed in sage linen shirt and wide ecru trousers, bedroom with plant and folded linens closer frame, soft hand-on-shoulder then hair-tuck gesture gentle eye contact "Is this okay? Tell me if you want to pause. Only if you want to — say yes.", intentional touch without nudity reciprocal softness, vertical 9:16 720x1280, 5s duration, slow bob subtle handheld with breathing, photorealistic 8k, shallow depth f/2.0 35mm, soft warm light diffused window golden cinematic_warm LUT teal shadows lifted, tactile fabric weave detail, clothed sensual tension Heat 3 — negative: low quality, blurry, deformed, cartoon, illustration, duplicate, watermark, nude, naked, topless, explicit, genitalia — compilation: your-new-stepsister-e2 | tags: temptation, reciprocal-touch, consent-beat, clothed | duration: 5s | camera: slow bob | res: 720x1280 9:16
+
+---
+
+## S4 — E2 S4: Leap — Closer Than E1 (0:15–0:20)
+BEAT: 6 Leap — Choose risk (E2 escalation: closer, longer hold than E1 S4)
+PHASE: Phase 3 Escalation peak (music drops, lighting warms, movement syncs)
+HEAT: Heat 3 — lean-in, breath sync, clothed, cut before kiss if ceiling
+EROTIC: Proximity: embrace-threshold but clothed no embrace (half-step closer than E1) · Vulnerability: breath sync whisper with emotional stake · Power: mutual — both choose to stay
+ANGLE: high-angle close-up 35mm face + shoulders, warm catchlight
+POV: true first-person POV eye level, viewer hands soft foreground no HUD, intimate wellness
+LIGHTING: soft warm golden-hour glow, dust motes, S-curve lifted blacks, cinematic_warm LUT
+DURATION: 5s  RESOLUTION: 720×1280 9:16  CAMERA: static locked tripod no movement
+TAGS: leap, lean-in-escalated, breath-sync, clothed, Heat 3
+FIRST_FRAME: /storyboard/pick-your-new-stepsister-e1-last.jpg
+LAST_FRAME: /storyboard/pick-your-new-stepsister-e1-last.jpg
+PROMPT:
+cinematic, synthetic adult woman 18+ clothed in soft cotton shirt and linen trousers, leaning in closer than before across kitchen counter hallway breath sync whisper "Breathe with me — slow. Don't look away. I want to remember how you look right now.", true first-person POV eye level viewer hands soft foreground no HUD, vertical 9:16 720x1280, 5s duration, static camera locked tripod no movement, photorealistic 8k, shallow depth of field f/2.0 35mm, soft warm light golden glow diffused, tactile fabric weave, clothed Heat 3 — negative: low quality, blurry, deformed, cartoon, illustration, duplicate, watermark, nude, naked, topless, explicit, genitalia — compilation: your-new-stepsister-e2 | tags: leap, proximity-escalated, breath-sync, clothed | duration: 5s | camera: static | res: 720x1280 9:16
+
+---
+
+## S5 — E2 S5: Crisis / Interruption (0:20–0:25)
+BEAT: 9 Crisis — external threat (knock / phone / parent voice off-screen)
+PHASE: Phase 4 Climax proxy interrupted — emotional peak tested
+HEAT: Heat 2 — pull back solo beat, consent check reset
+EROTIC: Proximity: step back (distance reintroduced by interruption) · Vulnerability: look-away, window light shift, phone buzz louder · Power: reset — "We go at your pace."
+ANGLE: waist-height medium shot eye level
+POV: eye-level over-shoulder, window flare
+LIGHTING: bright daylight — clean natural light soft shadows, window light shift + phone screen flare, high key
+DURATION: 5s  RESOLUTION: 720×1280 9:16  CAMERA: static locked tripod no movement
+TAGS: crisis, interruption, pull-back, consent-beat, clothed, Heat 2
+FIRST_FRAME: /storyboard/pick-your-new-stepsister-e1-last.jpg
+LAST_FRAME: /storyboard/pick-your-new-stepsister-e1-poster.jpg
+PROMPT:
+cinematic, synthetic adult woman 18+ clothed in cream knit loungewear, looking away toward window light shift phone buzz on counter door knock off-screen, pull-back solo beat window flare single breath pause "We go at your pace. Nod if you're with me.", waist-height camera medium shot eye level, vertical 9:16 720x1280, 5s duration, static camera locked tripod no movement, photorealistic 8k, shallow depth soft bokeh, bright daylight clean natural light soft shadows, clothed wellness Heat 2 — negative: low quality, blurry, deformed, cartoon, illustration, duplicate, watermark, nude, naked, topless, explicit — compilation: your-new-stepsister-e2 | tags: crisis, interruption, pull-back, clothed | duration: 5s | camera: static | res: 720x1280 9:16
+
+---
+
+## S6 — E2 S6: Plan & Afterglow — Choosing (0:25–0:30)
+BEAT: 10 Plan + 11 Execution + 12 HEA afterglow (she chooses to stay, tagline callback, cliffhanger for E3)
+PHASE: Phase 5 Afterglow / Tag — pull wide soft focus poster frame
+HEAT: Heat 2 — soft sheets embrace clothed laugh tagline, grounded warmth + plan for next day
+EROTIC: Proximity: embrace clothed soft sheets → pull wide · Vulnerability: laugh relief reciprocal disclosure "You're still here. Good." · Power: swap complete — she decides, he follows
+ANGLE: high-angle close-up 35mm + pull wide, face + shoulders
+POV: eye-contact soft gaze, serene
+LIGHTING: soft warm golden-hour diffused window, teal shadows lifted cinematic_warm LUT, poster frame at ~28s
+DURATION: 5s  RESOLUTION: 720×1280 9:16  CAMERA: slow bob gentle push-in with breathing
+TAGS: afterglow, plan, execution, tagline, clothed, Heat 2
+FIRST_FRAME: /storyboard/pick-your-new-stepsister-e1-poster.jpg
+LAST_FRAME: /storyboard/pick-your-new-stepsister-e1-poster.jpg
+PROMPT:
+cinematic, synthetic adult woman 18+ clothed in soft knit co-ord, soft sheets bedroom embrace laugh eye contact warm LUT cuddle "Next time, I'll be the one who's nervous. You're still here. Good.", golden-hour soft light pull wide soft focus tagline moment "Some house rules are meant to be broken — again tomorrow.", vertical 9:16 720x1280, 5s duration, slow bob gentle push-in with breathing, photorealistic 8k, shallow depth f/2.0 35mm, soft warm light golden hour boosted golds cinematic_warm.cube, shallow DOF bokeh, poster frame extract at 1.2s, clothed wellness Heat 2 — negative: low quality, blurry, deformed, cartoon, illustration, duplicate, watermark, nude, naked, topless, explicit — compilation: your-new-stepsister-e2 | tags: afterglow, plan, tagline, clothed, golden-hour | duration: 5s | camera: slow bob | res: 720x1280 9:16
+
+---
+
+# Generation commands (local only, no --remote, no Vast) — RUN ONLY AFTER USER APPROVAL
+# 1. Upload stills once (H3 image must be URL):
+# wavespeed upload public/storyboard/pick-your-new-stepsister-e1-first.jpg --json
+# wavespeed upload public/storyboard/pick-your-new-stepsister-e1-last.jpg --json
+# wavespeed upload public/storyboard/pick-your-new-stepsister-e1-poster.jpg --json
+# -> save 3 URLs as FIRST_URL, LAST_URL, POSTER_URL
+# 2. Per-scene (example S1 E2, no loras unless you test loras path separately):
+# cat > /tmp/e2-s1_input.json <<JSON
+# {"prompt":"<S1 prompt above>","image":"$POSTER_URL","last_image":"$FIRST_URL","duration":5,"resolution":"768p"}
+# JSON
+# wavespeed run wavespeed-ai/minimax-h3/image-to-video-lora --input-file /tmp/e2-s1_input.json --download output/prototype/e2-s1-5s-raw.mp4 --json
+# ffmpeg -y -i output/prototype/e2-s1-5s-raw.mp4 -vf "scale=720:1280:flags=lanczos" -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 128k output/prototype/e2-s1-5s.mp4
+# ffprobe -v error -select_streams v:0 -show_entries stream=width,height,duration -of default=noprint_wrappers=1 output/prototype/e2-s1-5s.mp4
+# Repeat S2..S6 with image/last_image per scene mapping above.
+# 3. Stitch 30s:
+# printf "file '/Users/parab/Documents/Personal/veilwick/output/prototype/e2-s1-5s.mp4'\nfile '...e2-s2...'\n...e2-s6...\n" > /tmp/e2_concat.txt
+# ffmpeg -y -f concat -safe 0 -i /tmp/e2_concat.txt -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 128k output/prototype/e2-30s.mp4
+# cp output/prototype/e2-30s.mp4 apps/web/public/prototype/e2-30s.mp4 && cp output/prototype/e2-30s.mp4 .open-next/assets/prototype/e2-30s.mp4
+# Cost budget E2: 6 × $0.25 = $1.50, ~73–127s per clip wall (avg 88s, see generation-log §12), sequential ~8–9min, parallel ~2.5min.
+
+# Continuity notes vs E1 (keep series lock):
+# - Same character tokens: "cream knit co-ord + soft linen robe / ecru knit co-ord / sage linen shirt + wide ecru trousers / soft cotton shirt + linen trousers / cream knit loungewear / soft knit co-ord" — repeat verbatim for face/hair/outfit lock.
+# - Same house: hallway with boxes doorway, bedroom with plant + folded linens, kitchen counter hallway — repeat tokens verbatim.
+# - Same gaze: "gentle eye contact / soft gaze" triggers consistent H3 eye lock with reference stills.
+# - Do not introduce new outfit not in E1 palette; escalation is proximity/lighting/camera, not wardrobe change.
+
+# Verification checklist before commit (do not skip):
+# - grep "photorealistic 8k" output/prototype/e2-prompts.txt should be 6
+# - grep -c "clothed" output/prototype/e2-prompts.txt >= 12 (outfit + compilation + negative + tags)
+# - every prompt contains: vertical 9:16, 720x1280, 5s duration, static camera OR slow bob, negative: ... nude ..., compilation: your-new-stepsister-e2
+# - no prompt contains explicit anatomy/act (genitalia only in negative tail)
+# - ffprobe after generation: width 720 height 1280 duration 5.166667 per 5s, stitched ~31.08s
+
+# Local-only guard: no wrangler --remote, no Vast, no public upload. Wavespeed CDN URLs are ephemeral (d2h7xmz...cloudfront). Output stays local output/prototype/ + preview mirrors.
+
+# AWAITING APPROVAL: do not run wavespeed generate until user says "generate E2" or "approve E2". This file is draft only.

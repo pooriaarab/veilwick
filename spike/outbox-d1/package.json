@@ -1,0 +1,16 @@
+{
+  "name": "spike-outbox-d1",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Throwaway spike: validate transactional outbox on D1 + Queue drain on Workers",
+  "scripts": {
+    "dev": "wrangler dev",
+    "migrate:local": "wrangler d1 migrations apply outbox-spike --local",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20251101.0",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.50.0"
+  }
+}

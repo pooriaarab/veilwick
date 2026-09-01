@@ -1,0 +1,31 @@
+# Copy to .dev.vars for local wrangler dev secrets. NEVER commit .dev.vars.
+
+# Better Auth
+# BETTER_AUTH_SECRET: required in every environment. In production the app
+#   throws at startup if it's unset. Set it as a wrangler secret per env:
+#   `wrangler secret put BETTER_AUTH_SECRET --env <staging|production>`.
+BETTER_AUTH_SECRET=dev-secret-change-me-32-chars-minimum-aaaa
+# NEXT_PUBLIC_BETTER_AUTH_URL: the app's public origin. Better Auth trusts this
+#   origin; if it's wrong/unset in production, every sign-in 403s "Invalid
+#   origin". Set it to the real deployed URL per environment (NOT localhost).
+NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:8787
+
+# App
+ENVIRONMENT=development
+
+# Email (Resend) - optional for scaffold
+RESEND_API_KEY=
+EMAIL_FROM=onboarding@localhost
+EMAIL_REPLY_TO=support@localhost
+
+# Cron self-callback secret
+CRON_SECRET=dev-cron-secret
+
+# OAuth providers (optional - scaffold works with email/password)
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+# Cloudflare Turnstile (use 1x0000000000000000000000000000000000FF for testing/bypass)
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000000000000000000000000000000000000UN
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000AA
+

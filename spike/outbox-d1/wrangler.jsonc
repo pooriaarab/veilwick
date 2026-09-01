@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "outbox-spike",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-05-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "outbox-spike",
+      "database_id": "local-outbox-spike",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "queues": {
+    "producers": [
+      { "binding": "OUTBOX_QUEUE", "queue": "outbox-spike-queue" }
+    ],
+    "consumers": [
+      {
+        "queue": "outbox-spike-queue",
+        "max_batch_size": 10,
+        "max_retries": 3
+      }
+    ]
+  },
+  "triggers": {
+    "crons": ["*/1 * * * *"]
+  }
+}

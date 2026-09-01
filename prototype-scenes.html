@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>VeilWick — Storyboard (Wireframe) — 2 series × 5 eps × 3-4 shots</title>
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0a0a0a;--card:#111113;--line:#232326;--muted:#9a9aa0;--pink:#f472b6;--pink2:#ec4899;--accent:#27272a;--warn:#fbbf24}
+html,body{margin:0;background:var(--bg);color:#e8e8ea;font-family:ui-sans,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+a{color:var(--pink)} code{font-family:ui-monospace,Menlo,monospace}
+.wrap{max-width:1240px;margin:0 auto;padding:24px 20px 60px}
+header{border:1px dashed #2a2a2e;border-radius:14px;padding:18px 18px;background:#0f0f10}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:999px;background:var(--accent);border:1px solid var(--line);color:#d6d6d8}
+.badge.pink{color:var(--pink);border-color:#3a2530;background:#1a1016}
+.kbd{font-size:11px;padding:2px 6px;border-radius:6px;background:#18181b;border:1px solid var(--line)}
+h1{font-size:22px;margin:14px 0 6px;letter-spacing:-.02em}
+h2{font-size:15px;margin:32px 0 10px;color:var(--pink);letter-spacing:.02em}
+h3{font-size:13px;margin:18px 0 8px;color:#fafafa;letter-spacing:.04em;text-transform:uppercase}
+.sub{color:var(--muted);font-size:13px;line-height:1.5}
+.notice{margin-top:14px;padding:10px 12px;border-radius:10px;background:#151515;border:1px solid #2a2a2e;color:#c8c8cc;font-size:12px;line-height:1.5}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+.theme{border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
+.theme-head{padding:14px 14px 10px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.theme-body{padding:14px}
+.swatches{display:flex;gap:8px;margin:10px 0}
+.swatch{height:18px;flex:1;border-radius:999px;border:1px solid #2a2a2e}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.meta div{border:1px dashed #2a2a2e;border-radius:10px;padding:8px 10px;background:#0f0f10}
+.meta b{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#d4d4d8}
+.meta p{margin:6px 0 0;color:#a8a8b0;font-size:12px;line-height:1.5}
+.series{margin-top:28px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#121214,#0d0d0f)}
+.series-h{padding:16px 16px 12px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.series-h h2{margin:0;font-size:16px;color:#fff}
+.pill{font-size:11px;padding:3px 8px;border-radius:999px;border:1px solid var(--line);background:#1a1a1e;color:#e6e6e8}
+.ep{border-top:1px solid #1e1e22;padding:16px;background:#0f0f11}
+.ep:first-of-type{border-top:none}
+.ep-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.ep-title{font-weight:700;font-size:13px;letter-spacing:.02em}
+.ep-meta{color:var(--muted);font-size:12px}
+.lock{color:var(--pink);font-size:11px;font-weight:600}
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.shot{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#0a0a0b;display:flex;flex-direction:column}
+.frame{position:relative;aspect-ratio:9/16;background:#141417;border-bottom:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
+.frame-inner{position:absolute;inset:0;display:grid;place-items:center;padding:14px;text-align:center}
+.frame-bg{position:absolute;inset:0;opacity:1;object-fit:cover;width:100%;height:100%;filter:saturate(.8) contrast(1.05)}
+.wire{border:1.5px dashed #3a3a3e;border-radius:10px;padding:10px 10px;width:92%;background:rgba(10,10,11,.92)}
+.wire b{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--pink)}
+.wire p{margin:6px 0 0;color:#c9c9ce;font-size:11px;line-height:1.4}
+.dim{position:absolute;top:8px;left:8px;font-size:10px;letter-spacing:.06em;padding:3px 6px;border-radius:999px;background:#000;color:#fff;border:1px solid #2a2a2e}
+.seed{position:absolute;bottom:6px;right:6px;font-size:9px;color:#9a9aa0;background:rgba(0,0,0,.7);padding:2px 6px;border-radius:999px;border:1px solid #2a2a2e}
+.shot-body{padding:10px 10px 12px}
+.shot-top{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.tag{font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:3px 6px;border-radius:999px;background:#1c1c20;border:1px solid #2a2a2e;color:#d6d6d8}
+.tag.lora{color:#f9a8d4;border-color:#3a2530;background:#1f1220}
+.prompt{display:block;margin:8px 0;padding:8px 8px;background:#0e0e10;border:1px solid #232326;border-radius:8px;color:#d8d8de;font-size:11px;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+.purpose{color:#b8b8c0;font-size:12px;line-height:1.5;margin:8px 0 0}
+.pipeline{margin-top:24px;border:1px solid var(--line);border-radius:14px;background:var(--card);padding:14px}
+.legend{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+footer{margin-top:28px;color:#777;font-size:11px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<span class="badge pink">Storyboard-First</span>
+<span class="badge">Wireframe HTML — not final render</span>
+<span class="badge">720×1280 · 9:16 · vertical</span>
+<span class="badge">60s / episode · 4× ~15s shots · Wan first_frame/last_frame stitch</span>
+<span class="badge">Synthetic 18+ · fictional</span>
+</div>
+<h1>VeilWick — Storyboard</h1>
+<p class="sub">Replaces random <span class="kbd">picsum</span> beach / landmark placeholders with a deterministic <b>shot list per episode</b>: prompt + purpose + LoRA per shot. Every frame is <b>720×1280</b>. Picsum is kept only as a deterministic seeded watermark behind a wireframe block — the wireframe text is the source of truth.</p>
+<div class="notice" style="border-color:#f472b6;background:#1a1016">
+<b style="color:#fff">Realism gate — /prototype-scenes:</b> This page is the realism gate. Generate <b>ONE</b> 5s H3 clip first via <code>wavespeed-ai/minimax-h3/image-to-video-lora</code> with <code>image+last_image+loras</code> (768p 9:16, $0.25) using a non-explicit fashion/wellness prompt (see below), validate photorealism/lighting/720×1280 locally (<code>wrangler d1 ... --local</code>, R2 preview_bucket), then expand <code>/feed</code> to storyboard prompts. Feed auto-generates on scroll (buffer&lt;2 or sentinel near end → <code>POST /api/feed/prefetch</code> / <code>GET /api/feed?personalized=true</code> → <code>h3.generate</code>). Do not scale feed until the single-video gate passes. Feed itself is H3-only, local miniflare <code>--local</code> only, no <code>--remote</code>, no Vast.
+</div>
+<div class="notice">
+<b style="color:#fff">How to read:</b> per series → Visual Theme → 5 episodes × 3–4 shots. Each shot: timecode, framing, <code>prompt</code>, <code>purpose</code>, <code>LoRA</code> (Civitai Wan 14B t2v), and a <span class="kbd">720×1280</span> wireframe placeholder. Stitch rule: <code>first_frame = previous last_frame</code> (Wan video-extend → image-to-video fallback). Posters via <code>ffmpeg -ss 1.2 720×1280</code> → <code>R2 posters/series/{slug}/ep{num}.jpg</code>.
+</div>
+<div class="legend" aria-label="LoRA legend">
+<span class="tag lora">1333923 blowjob v2021242 0.8</span>
+<span class="tag lora">1428098 cowgirl v1700002 0.8 (+ reverse)</span>
+<span class="tag lora">1269557 titfuck 0.8</span>
+<span class="tag lora">1434650 missionary helper 0.8</span>
+<span class="tag lora">1426284 anal 0.8</span>
+<span class="tag lora">1350447 cumshot 0.8</span>
+<span class="tag">base Wan 2.4-14B 720×1280, steps 28, CFG 6.5, dpmpp_2m</span>
+</div>
+</header>
+
+<h2>Visual Themes — source of truth per series</h2>
+<div class="grid2">
+<div class="theme">
+<div class="theme-head">
+<b>Private Lessons — <code>pl</code> · gru</b>
+<span class="pill">warm academic · night interiors</span>
+</div>
+<div class="theme-body">
+<div class="swatches" aria-hidden="true"><span class="swatch" style="background:#1a140f"></span><span class="swatch" style="background:#3a2a1a"></span><span class="swatch" style="background:#e8d5b0"></span><span class="swatch" style="background:#8a6b4a"></span><span class="swatch" style="background:#0f0f12"></span></div>
+<p class="sub">After-hours tutoring in a professor's home library. Wood shelves, desk lamp pool, blinds shadows. Soft studio light + shallow DOF. Vertical 720×1280, photorealistic skin, 8k. No real persons — synthetic adult 18+. Keep wardrobe consistent (cream blouse / dark skirt) and lamp color temp continuous across E1→E5.</p>
+<div class="meta">
+<div><b>Palette &amp; light</b><p>charcoal + cream + amber lamp (2700K), gold foil title ref. Warm practical, soft bokeh, slight vignette.</p></div>
+<div><b>Camera</b><p>locked tripod 35–50mm, eye-level medium/close, subtle dolly-in on tension beats. No handheld.</p></div>
+<div><b>Continuity</b><p>E1 last_frame = E2 first_frame (Wan video-extend). Poster = frame @1.2s, 720×1280 exact. R2 <code>videos/pl/ep{n}.mp4</code></p></div>
+<div><b>Sanitization</b><p>Posters: suggestive not explicit ("romantic tension, soft cinematic lighting"). Video prompts carry LoRA + act where needed.</p></div>
+</div>
+</div>
+</div>
+<div class="theme">
+<div class="theme-head">
+<b>Your New Stepsister — <code>st</code> · Span</b>
+<span class="pill">modern domestic · soft daylight</span>
+</div>
+<div class="theme-body">
+<div class="swatches" aria-hidden="true"><span class="swatch" style="background:#eef2f7"></span><span class="swatch" style="background:#f4a7b9"></span><span class="swatch" style="background:#c9b7ff"></span><span class="swatch" style="background:#9ecbff"></span><span class="swatch" style="background:#111827"></span></div>
+<p class="sub">Blended-family move-in week. Hallway, shared bedroom, kitchen daylight. Pastel domestic, sheer curtains, morning haze. Same 720×1280 vertical, soft natural light, photorealistic. Wardrobe continuous (pastel cardigan / denim). Subtle tension, not explicit in poster.</p>
+<div class="meta">
+<div><b>Palette &amp; light</b><p>warm white + coral/salmon + soft gray, window bounce, gentle bloom. Clean domestic movie-poster vibe.</p></div>
+<div><b>Camera</b><p>handheld-minimal, 28–50mm, doorway frames, over-shoulder on dare-game beat. Keep eyelines consistent.</p></div>
+<div><b>Continuity</b><p>Same stitch rule. E2 dare cliff → paywall at E3. Poster @1.2s. R2 <code>videos/st/ep{n}.mp4</code></p></div>
+<div><b>Sanitization</b><p>Poster uses "intimate wellness / cozy domestic" wording. Acts live only in shot prompts + LoRA tags.</p></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ================= SERIES 1 ================= -->
+<section class="series" aria-label="Private Lessons">
+<div class="series-h">
+<h2>Private Lessons — 5 episodes · 60s continuous</h2>
+<span class="pill">Series <code>private-lessons</code> · slug <code>pl</code> · 720×1280</span>
+</div>
+
+<!-- E1 -->
+<div class="ep">
+<div class="ep-head">
+<span class="badge pink">E1 FREE</span>
+<span class="ep-title">E1 — Meet the tutor</span>
+<span class="ep-meta">0:00–1:00 · poster <code>posters/pl/ep1.jpg</code> · video <code>videos/pl/ep1.mp4</code> · <b style="color:#fff">first_frame = cold open</b></span>
+</div>
+<div class="shots">
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep1-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E1 S1 — 0:00–0:15</b><p>Wide · library establish · desk lamp pool</p></div></div>
+<span class="seed">seed veilwick-pl-e1-s1</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S1 0:00–0:15 · 15s</span><span class="tag">wide · 35mm · locked</span><span class="tag lora">base + 1434650 helper 0.2</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, private tutoring desk in wood-paneled library, warm desk-lamp pool, blinds shadows, photorealistic, 8k, shallow DOF, vertical 720x1280, soft studio lighting — gentle intimacy, missionary helper 1434650:0.2</code>
+<p class="purpose"><b>Purpose:</b> establish space + power tension (professor's home). Hold empty chair for entrant. End on clean desk surface for stitch.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep1-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E1 S2 — 0:15–0:30</b><p>Medium · across-desk dialogue</p></div></div>
+<span class="seed">seed veilwick-pl-e1-s2</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S2 0:15–0:30 · 15s</span><span class="tag">medium · 50mm</span><span class="tag lora">1333923 blowjob 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, across desk eye contact, breathy dialogue, lips slightly parted, soft bokeh, photorealistic, vertical 720x1280 — POV blowjob tease, slow, 18+ synthetic, LoRA 1333923:0.8</code>
+<p class="purpose"><b>Purpose:</b> first intimate beat. Tease, not explicit. Build breath sync. Eyes to camera as consent anchor.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep1-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E1 S3 — 0:30–0:45</b><p>Close · lean-in</p></div></div>
+<span class="seed">seed veilwick-pl-e1-s3</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S3 0:30–0:45 · 15s</span><span class="tag">close · 50mm · dolly-in</span><span class="tag lora">1428098 cowgirl 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, slow sensual lean over desk, hip sway hint, warm lamp tones, tactile fabric, photorealistic, vertical 720x1280 — cowgirl ride rhythm, breath synced, LoRA 1428098:0.8</code>
+<p class="purpose"><b>Purpose:</b> escalate with motion language (hip sway) without explicit act. Mirror lamp color across cut.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep1-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E1 S4 — 0:45–1:00</b><p>Insert · hands / notebook · LAST_FRAME</p></div></div>
+<span class="seed">seed veilwick-pl-e1-s4 · E1 last_frame</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S4 0:45–1:00 · 15s</span><span class="tag">insert · top-down</span><span class="tag">base (stitch frame)</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, hands on notebook, pen pause, soft focus, shallow DOF, vertical 720x1280, photorealistic, desk texture detail — hold composition for first_frame stitch</code>
+<p class="purpose"><b>Purpose:</b> clean <b>last_frame</b> for seamless E1→E2 stitch (<code>first_frame = E1 last_frame</code>). Freeze pen mid-page. No camera move last 2s.</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- E2 -->
+<div class="ep">
+<div class="ep-head">
+<span class="badge pink">E2 FREE — cliffhanger</span>
+<span class="ep-title">E2 — Under the table</span>
+<span class="ep-meta">0:00–1:00 · <b style="color:var(--warn)">first_frame = E1 last_frame</b> · poster <code>posters/pl/ep2.jpg</code></span>
+<span class="lock">cliff → paywall</span>
+</div>
+<div class="shots">
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep2-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E2 S1 — 0:00–0:15</b><p>Medium · under-desk reveal (continuous)</p></div></div>
+<span class="seed">seed veilwick-pl-e2-s1 · first_frame=E1 last_frame</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S1 0:00–0:15 · 15s</span><span class="tag">medium · 28mm low</span><span class="tag lora">1333923 blowjob 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, continuous from last_frame (notebook), slow tilt down under desk, POV blowjob tease, breathy eye contact, soft bokeh, vertical 720x1280 — LoRA 1333923:0.8, first_frame continuity</code>
+<p class="purpose"><b>Purpose:</b> seamless stitch beat. Tilt down must match desk edge exactly. Tease only; hold gaze.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep2-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E2 S2 — 0:15–0:30</b><p>Medium · rhythm</p></div></div>
+<span class="seed">seed veilwick-pl-e2-s2</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S2 0:15–0:30 · 15s</span><span class="tag">medium · 35mm</span><span class="tag lora">1428098 cowgirl reverse 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, reverse cowgirl, arched back, hair flowing, bedroom soft light blend, vertical 720x1280 — reverse cowgirl LoRA 1428098:0.8 (reverse variant)</code>
+<p class="purpose"><b>Purpose:</b> motion contrast (arch + hair). Keep lamp warmth to preserve library palette.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep2-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E2 S3 — 0:30–0:45</b><p>Close · chest / breath</p></div></div>
+<span class="seed">seed veilwick-pl-e2-s3</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S3 0:30–0:45 · 15s</span><span class="tag">close · 50mm shallow</span><span class="tag lora">1269557 titfuck 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, soft focus chest, playful breath, shallow depth, vertical 720x1280 — titfuck tease LoRA 1269557:0.8</code>
+<p class="purpose"><b>Purpose:</b> texture/focus play. Hold exposure consistent; no AWB shift.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep2-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E2 S4 — 0:45–1:00</b><p>Close · doorway footstep — CLIFF</p></div></div>
+<span class="seed">seed veilwick-pl-e2-s4 · cliff last_frame</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S4 0:45–1:00 · 15s</span><span class="tag">close · locked · no move last 2s</span><span class="tag">base (cliff)</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, freeze glance toward doorway, footstep shadow under door, shallow DOF, vertical 720x1280 — hold, tension, no explicit act</code>
+<p class="purpose"><b>Purpose:</b> cliffhanger — interruption incoming. Freeze for paywall. This <b>last_frame</b> becomes E3 <code>first_frame</code> if user unlocks.</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- E3 -->
+<div class="ep">
+<div class="ep-head">
+<span class="badge">E3</span>
+<span class="ep-title">E3 — After class</span>
+<span class="ep-meta">premium · 0:00–1:00 · poster <code>posters/pl/ep3.jpg</code></span>
+<span class="lock">🔒 Premium — unlocks after cliff</span>
+</div>
+<div class="shots">
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep3-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E3 S1 — 0:00–0:15</b><p>Medium · door shuts · resume</p></div></div>
+<span class="seed">seed veilwick-pl-e3-s1</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S1 0:00–0:15 · 15s</span><span class="tag">medium</span><span class="tag lora">1434650 missionary 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, soft sheets / library couch, missionary intimacy, eye contact, gentle, cinematic, vertical 720x1280 — LoRA 1434650:0.8</code>
+<p class="purpose"><b>Purpose:</b> payoff for cliff — door closed, safe. Gentle start before faster rhythm.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep3-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E3 S2 — 0:15–0:35</b><p>Side angle · tension</p></div></div>
+<span class="seed">seed veilwick-pl-e3-s2</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S2 0:15–0:35 · 20s</span><span class="tag">side · 35mm</span><span class="tag lora">1426284 anal 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, anal intimacy teaser, side angle, soft lighting, tension, vertical 720x1280 — careful composition, LoRA 1426284:0.8</code>
+<p class="purpose"><b>Purpose:</b> tension escalation. Keep framing careful (side, soft light). Longest beat of episode.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep3-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E3 S3 — 0:35–0:50</b><p>Medium · sway</p></div></div>
+<span class="seed">seed veilwick-pl-e3-s3</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S3 0:35–0:50 · 15s</span><span class="tag">medium</span><span class="tag lora">1428098 cowgirl 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, cowgirl ride, slow sensual rhythm, hip sway, breath synced, warm tones, tactile, vertical 720x1280 — LoRA 1428098:0.8</code>
+<p class="purpose"><b>Purpose:</b> rhythmic payoff. Match warm grade to Visual Theme amber.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep3-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E3 S4 — 0:50–1:00</b><p>Close · breath + droplets</p></div></div>
+<span class="seed">seed veilwick-pl-e3-s4</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S4 0:50–1:00 · 10s</span><span class="tag">close · macro-light</span><span class="tag lora">1350447 cumshot 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, cumshot finish, expressive, studio lighting, slow motion droplets, vertical 720x1280 — LoRA 1350447:0.8</code>
+<p class="purpose"><b>Purpose:</b> finish beat — droplets in lamp light. End on soft focus for E3 last_frame.</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- E4 -->
+<div class="ep">
+<div class="ep-head">
+<span class="badge">E4</span>
+<span class="ep-title">E4 — Office hours</span>
+<span class="ep-meta">premium · poster <code>posters/pl/ep4.jpg</code></span>
+<span class="lock">🔒 Premium</span>
+</div>
+<div class="shots">
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep3-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E4 S1 — 0:00–0:20</b><p>Medium · desk return</p></div></div>
+<span class="seed">seed veilwick-pl-e4-s1</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S1 0:00–0:20 · 20s</span><span class="tag">medium · 35mm</span><span class="tag lora">1333923 blowjob 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, POV blowjob tease, slow, breathy, eye contact, lips slightly parted, soft bokeh, vertical 720x1280 — LoRA 1333923:0.8, desk callback</code>
+<p class="purpose"><b>Purpose:</b> callback to E2 desk language, now with confidence. Slower breath.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep3-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E4 S2 — 0:20–0:40</b><p>Close · shallow</p></div></div>
+<span class="seed">seed veilwick-pl-e4-s2</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S2 0:20–0:40 · 20s</span><span class="tag">close · 50mm</span><span class="tag lora">1269557 titfuck 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, titfuck tease, soft focus chest, playful, shallow depth, vertical 720x1280 — LoRA 1269557:0.8</code>
+<p class="purpose"><b>Purpose:</b> texture focus. Keep framing vertical-safe (no crop risk).</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep3-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E4 S3 — 0:40–1:00</b><p>Medium · reverse arch</p></div></div>
+<span class="seed">seed veilwick-pl-e4-s3</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S3 0:40–1:00 · 20s</span><span class="tag">medium · 35mm</span><span class="tag lora">1428098 reverse 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, reverse cowgirl, arched back, hair flowing, bedroom soft light blended to library amber, vertical 720x1280 — LoRA 1428098:0.8 reverse</code>
+<p class="purpose"><b>Purpose:</b> close episode on motion silhouette. Hold last 3s locked for stitch into finale.</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- E5 -->
+<div class="ep">
+<div class="ep-head">
+<span class="badge">E5</span>
+<span class="ep-title">E5 — Final exam</span>
+<span class="ep-meta">premium · finale · poster <code>posters/pl/ep5.jpg</code></span>
+<span class="lock">🔒 Premium — season cap</span>
+</div>
+<div class="shots">
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep1-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E5 S1 — 0:00–0:25</b><p>Wide · night window</p></div></div>
+<span class="seed">seed veilwick-pl-e5-s1</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S1 0:00–0:25 · 25s</span><span class="tag">wide · 28mm</span><span class="tag lora">1434650 missionary 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, window rain, missionary intimacy, soft sheets, eye contact, gentle, cinematic, vertical 720x1280 — LoRA 1434650:0.8, night exterior bokeh</code>
+<p class="purpose"><b>Purpose:</b> finale soft open — rain on window, wider framing. Re-center intimacy after escalations.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep2-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E5 S2 — 0:25–0:45</b><p>Medium · sway finale</p></div></div>
+<span class="seed">seed veilwick-pl-e5-s2</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S2 0:25–0:45 · 20s</span><span class="tag">medium</span><span class="tag lora">1428098 cowgirl 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, cowgirl ride, slow sensual rhythm, hip sway, warm lamp + moonlight mix, vertical 720x1280 — LoRA 1428098:0.8</code>
+<p class="purpose"><b>Purpose:</b> signature rhythm returned as motif. Match S1 color to prove continuity.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/pl-ep3-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>PL E5 S3 — 0:45–1:00</b><p>Close · finish + epilogue</p></div></div>
+<span class="seed">seed veilwick-pl-e5-s3</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S3 0:45–1:00 · 15s</span><span class="tag">close → wide epilogue</span><span class="tag lora">1350447 cumshot 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, cumshot finish expressive, studio lighting, slow motion droplets, then pull to empty desk epilogue, vertical 720x1280 — LoRA 1350447:0.8</code>
+<p class="purpose"><b>Purpose:</b> season button — finish then pull to empty desk (where E1 began). Loop-close composition.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ================= SERIES 2 ================= -->
+<section class="series" aria-label="Your New Stepsister">
+<div class="series-h">
+<h2>Your New Stepsister — 5 episodes · 60s continuous</h2>
+<span class="pill">Series <code>your-new-stepsister</code> · slug <code>st</code> · 720×1280</span>
+</div>
+
+<!-- ST E1 -->
+<div class="ep">
+<div class="ep-head">
+<span class="badge pink">E1 FREE</span>
+<span class="ep-title">E1 — Unpacking</span>
+<span class="ep-meta">0:00–1:00 · poster <code>posters/st/ep1.jpg</code></span>
+</div>
+<div class="shots">
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep1-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E1 S1 — 0:00–0:15</b><p>Wide · hallway boxes</p></div></div>
+<span class="seed">seed veilwick-st-e1-s1</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S1 0:00–0:15 · 15s</span><span class="tag">wide · 28mm</span><span class="tag">base · pastel domestic</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, hallway with moving boxes, soft window daylight, cozy domestic, photorealistic, 8k, shallow DOF, vertical 720x1280 — warm white + coral palette, morning haze</code>
+<p class="purpose"><b>Purpose:</b> establish new-home tension. Boxes as foreground framing. Hold hallway deep for depth.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep1-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E1 S2 — 0:15–0:30</b><p>Medium · bedroom doorway</p></div></div>
+<span class="seed">seed veilwick-st-e1-s2</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S2 0:15–0:30 · 15s</span><span class="tag">medium · 35mm doorway</span><span class="tag lora">1434650 missionary 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, doorway lean, soft sheets background, eye contact gentle, photorealistic, vertical 720x1280 — missionary helper LoRA 1434650:0.8, daylight bounce</code>
+<p class="purpose"><b>Purpose:</b> soft intimacy introduction. Door frame = composition anchor carried through series.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep1-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E1 S3 — 0:30–0:45</b><p>Medium · playful tease</p></div></div>
+<span class="seed">seed veilwick-st-e1-s3</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S3 0:30–0:45 · 15s</span><span class="tag">medium</span><span class="tag lora">1333923 blowjob 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, POV blowjob tease, slow breathy, eye contact, lips slightly parted, soft bokeh, vertical 720x1280 — LoRA 1333923:0.8, domestic daylight</code>
+<p class="purpose"><b>Purpose:</b> first explicit-coded tease, still soft. Breath sync with curtain movement.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep1-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E1 S4 — 0:45–1:00</b><p>Insert · shared closet · LAST_FRAME</p></div></div>
+<span class="seed">seed veilwick-st-e1-s4 · E1 last_frame</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S4 0:45–1:00 · 15s</span><span class="tag">insert · locked 2s</span><span class="tag">base (stitch)</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, shared closet shelf, hands brushing, shallow DOF, vertical 720x1280 — hold composition for first_frame stitch, pastel cardigan continuity</code>
+<p class="purpose"><b>Purpose:</b> clean <b>last_frame</b> — hands near but not touching. Frozen for E1→E2 stitch.</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ST E2 -->
+<div class="ep">
+<div class="ep-head">
+<span class="badge pink">E2 FREE — dare game</span>
+<span class="ep-title">E2 — Dare game</span>
+<span class="ep-meta">0:00–1:00 · <b style="color:var(--warn)">first_frame = E1 last_frame</b> · poster <code>posters/st/ep2.jpg</code></span>
+<span class="lock">cliff → paywall</span>
+</div>
+<div class="shots">
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep2-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E2 S1 — 0:00–0:15</b><p>Medium · closet — continuous</p></div></div>
+<span class="seed">seed veilwick-st-e2-s1 · first_frame=E1 last_frame</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S1 0:00–0:15 · 15s</span><span class="tag">medium · continuous</span><span class="tag lora">1428098 cowgirl 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, continuous from closet last_frame, slow turn, cowgirl rhythm hint, hip sway, photonatural, vertical 720x1280 — LoRA 1428098:0.8</code>
+<p class="purpose"><b>Purpose:</b> seamless continuation — turn must match shelf line. Rhythm introduced as dare escalation.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep2-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E2 S2 — 0:15–0:30</b><p>Close · whisper</p></div></div>
+<span class="seed">seed veilwick-st-e2-s2</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S2 0:15–0:30 · 15s</span><span class="tag">close · 50mm</span><span class="tag lora">1333923 blowjob 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, close whisper to camera, breathy, soft bokeh hallway behind, vertical 720x1280 — LoRA 1333923:0.8, dare language</code>
+<p class="purpose"><b>Purpose:</b> dare delivered — eye contact holds. Audio sync point; camera locked.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep2-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E2 S3 — 0:30–0:45</b><p>Medium · couch temptation</p></div></div>
+<span class="seed">seed veilwick-st-e2-s3</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S3 0:30–0:45 · 15s</span><span class="tag">medium · 35mm</span><span class="tag lora">1269557 titfuck 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, couch soft focus chest, playful tease, shallow depth, vertical 720x1280 — LoRA 1269557:0.8</code>
+<p class="purpose"><b>Purpose:</b> dare acted — but held before explicit. Light remains daylight consistent.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep2-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E2 S4 — 0:45–1:00</b><p>Wide · front door knock — CLIFF</p></div></div>
+<span class="seed">seed veilwick-st-e2-s4 · cliff last_frame</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S4 0:45–1:00 · 15s</span><span class="tag">wide · locked</span><span class="tag">base (cliff)</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, wide hallway, front door knock shadow, freeze glance, shallow DOF, vertical 720x1280 — tension, interruption</code>
+<p class="purpose"><b>Purpose:</b> cliffhanger — parent home early. Freeze gaze to door. Paywall triggers here.</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ST E3 -->
+<div class="ep">
+<div class="ep-head">
+<span class="badge">E3</span>
+<span class="ep-title">E3 — Door closed</span>
+<span class="ep-meta">premium · poster <code>posters/st/ep3.jpg</code></span>
+<span class="lock">🔒 New — dare payoff</span>
+</div>
+<div class="shots">
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep1-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E3 S1 — 0:00–0:15</b><p>Medium · door shuts</p></div></div>
+<span class="seed">seed veilwick-st-e3-s1</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S1 0:00–0:15 · 15s</span><span class="tag">medium</span><span class="tag lora">1434650 missionary 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, bedroom door shuts, soft sheets, missionary intimacy, eye contact gentle, vertical 720x1280 — LoRA 1434650:0.8</code>
+<p class="purpose"><b>Purpose:</b> door closed = safe. Gentle start, echo E1 doorway motif.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep2-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E3 S2 — 0:15–0:35</b><p>Side · slow</p></div></div>
+<span class="seed">seed veilwick-st-e3-s2</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S2 0:15–0:35 · 20s</span><span class="tag">side · 35mm</span><span class="tag lora">1428098 cowgirl reverse 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, reverse cowgirl, arched back, hair flowing, soft daylight through curtains, vertical 720x1280 — LoRA 1428098:0.8 reverse</code>
+<p class="purpose"><b>Purpose:</b> dare payoff — reverse arch as payoff motion. Curtain light flicker matched.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep2-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E3 S3 — 0:35–0:50</b><p>Side · tension</p></div></div>
+<span class="seed">seed veilwick-st-e3-s3</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S3 0:35–0:50 · 15s</span><span class="tag">side</span><span class="tag lora">1426284 anal 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, anal intimacy teaser, side angle, soft lighting tension, vertical 720x1280 — LoRA 1426284:0.8</code>
+<p class="purpose"><b>Purpose:</b> escalation beat. Careful side composition, keep pastel palette.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep1-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E3 S4 — 0:50–1:00</b><p>Close · finish</p></div></div>
+<span class="seed">seed veilwick-st-e3-s4</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S4 0:50–1:00 · 10s</span><span class="tag">close · bloom</span><span class="tag lora">1350447 cumshot 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, cumshot finish, expressive, studio window light, slow motion droplets, vertical 720x1280 — LoRA 1350447:0.8</code>
+<p class="purpose"><b>Purpose:</b> finish with window bloom. End soft for last_frame.</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ST E4 -->
+<div class="ep">
+<div class="ep-head">
+<span class="badge">E4</span>
+<span class="ep-title">E4 — Kitchen after midnight</span>
+<span class="ep-meta">premium · poster <code>posters/st/ep4.jpg</code></span>
+<span class="lock">🔒 New</span>
+</div>
+<div class="shots">
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep1-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E4 S1 — 0:00–0:20</b><p>Wide · kitchen night light</p></div></div>
+<span class="seed">seed veilwick-st-e4-s1</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S1 0:00–0:20 · 20s</span><span class="tag">wide · 28mm</span><span class="tag lora">1333923 blowjob 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, kitchen night, fridge light, POV blowjob tease, breathy, soft bokeh, vertical 720x1280 — LoRA 1333923:0.8, domestic night palette</code>
+<p class="purpose"><b>Purpose:</b> location change — late-night kitchen. Fridge as practical light source.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep2-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E4 S2 — 0:20–0:40</b><p>Medium · counter lean</p></div></div>
+<span class="seed">seed veilwick-st-e4-s2</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S2 0:20–0:40 · 20s</span><span class="tag">medium · 35mm</span><span class="tag lora">1269557 titfuck 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, kitchen counter, titfuck tease, soft focus chest, shallow depth, vertical 720x1280 — LoRA 1269557:0.8</code>
+<p class="purpose"><b>Purpose:</b> counter-height framing. Keep tile pattern continuous.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep2-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E4 S3 — 0:40–1:00</b><p>Medium · sway on stool</p></div></div>
+<span class="seed">seed veilwick-st-e4-s3</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S3 0:40–1:00 · 20s</span><span class="tag">medium · 35mm</span><span class="tag lora">1428098 cowgirl 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, cowgirl ride on stool, hip sway, warm tungsten + fridge cool mix, vertical 720x1280 — LoRA 1428098:0.8</code>
+<p class="purpose"><b>Purpose:</b> mixed lighting payoff (warm/cool). Hold last 3s locked for stitch.</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ST E5 -->
+<div class="ep">
+<div class="ep-head">
+<span class="badge">E5</span>
+<span class="ep-title">E5 — Morning after</span>
+<span class="ep-meta">premium · finale · poster <code>posters/st/ep5.jpg</code></span>
+<span class="lock">🔒 New — season cap</span>
+</div>
+<div class="shots">
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep1-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E5 S1 — 0:00–0:25</b><p>Wide · morning hallway</p></div></div>
+<span class="seed">seed veilwick-st-e5-s1</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S1 0:00–0:25 · 25s</span><span class="tag">wide · 28mm</span><span class="tag lora">1434650 missionary 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, morning hallway, soft sheets in doorway, missionary intimacy gentle, photorealistic, vertical 720x1280 — LoRA 1434650:0.8, morning haze</code>
+<p class="purpose"><b>Purpose:</b> finale reset — morning light, gentle. Hallway from E1 revisited.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep2-first.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E5 S2 — 0:25–0:45</b><p>Medium · shared laugh</p></div></div>
+<span class="seed">seed veilwick-st-e5-s2</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S2 0:25–0:45 · 20s</span><span class="tag">medium</span><span class="tag lora">1428098 cowgirl 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, cowgirl ride, slow sensual rhythm, hip sway, breath synced, warm tones, vertical 720x1280 — LoRA 1428098:0.8, morning palette</code>
+<p class="purpose"><b>Purpose:</b> motif return — hallway rhythm, now consensual/shared. Warm white balance.</p>
+</div>
+</div>
+
+<div class="shot">
+<div class="frame">
+<img class="frame-bg" alt="" loading="lazy" src="/storyboard/st-ep2-last.jpg"/>
+<div class="dim">720×1280</div>
+<div class="frame-inner"><div class="wire"><b>ST E5 S3 — 0:45–1:00</b><p>Close · finish + boxes gone epilogue</p></div></div>
+<span class="seed">seed veilwick-st-e5-s3</span>
+</div>
+<div class="shot-body">
+<div class="shot-top"><span class="tag">S3 0:45–1:00 · 15s</span><span class="tag">close → wide</span><span class="tag lora">1350447 cumshot 0.8</span></div>
+<code class="prompt">cinematic, synthetic adult woman 18+, cumshot finish expressive, window morning light, slow motion droplets, then pull to hallway with boxes gone, vertical 720x1280 — LoRA 1350447:0.8</code>
+<p class="purpose"><b>Purpose:</b> season button — finish then pull to empty hallway (E1 boxes removed). Provenance: settled.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<div class="pipeline">
+<h3 style="margin:0 0 8px">Pipeline — how shots become 720×1280 episodes</h3>
+<p class="sub" style="margin:0">Wavespeed <code>alibaba/wan-2.7/text-to-video</code> per shot (720×1280, LoRA weight 0.8, steps 28, CFG 6.5, dpmpp_2m) → Wan <code>video-extend</code> with <code>first_frame/last_frame</code> stitching (image-to-video fallback) → <code>ffmpeg concat</code> → <code>ffmpeg -ss 1.2 -i scene.mp4 -vframes 1 -s 720x1280 poster.jpg</code> → R2 <code>videos/{slug}/ep{n}.mp4</code> + <code>posters/{slug}/ep{n}.jpg</code> → D1 <code>episodes.posterUrl / videoUrl</code>. LoRA IDs from <code>docs/prompts.md</code> + <code>wan.ts TOP_NSFW_LORAS</code>. Seeded picsum is wireframe watermark only; production replaces with Wan output.</p>
+<div class="meta" style="margin-top:12px">
+<div><b>Negative prompt</b><p><code>low quality, blurry, deformed, cartoon, illustration, duplicate, watermark</code></p></div>
+<div><b>Verify</b><p><code>ffprobe -show_entries stream=width,height → 720,1280</code> · duration 60s · first_frame continuity no jump cut</p></div>
+</div>
+</div>
+
+<footer>
+<p>Synthetic 18+ wellness — all characters fictional consenting adults. No real persons. Generated via <code>docs/prompts.md</code> + Wavespeed <code>alibaba/wan-2.7/text-to-video</code> &amp; <code>video-extend first_frame/last_frame</code>. Posters are 720×1280. R2: <code>videos/series/{slug}/ep{num}.mp4</code> + <code>posters/{slug}/ep{num}.jpg</code> — see <code>apps/web/src/lib/wan.ts</code>, <code>wavespeed.ts</code>, <code>poster-styles.md</code>.</p>
+<p>Route: this file is served at <code>/prototype-scenes.html</code> and <code>/prototype-scenes</code> (via <code>apps/web/public/</code>). Wireframe blocks are the spec; final renders replace them 1:1.</p>
+</footer>
+</div>
+</body>
+</html>

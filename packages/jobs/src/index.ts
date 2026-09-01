@@ -1,0 +1,48 @@
+import type { H3GenerateJob } from "./h3-jobs";
+import type { WanGenerateJob } from "./wan-jobs";
+
+export interface QueueMessageContract<Type extends string = string, Payload = any> {
+  type: Type;
+  id: string; // Used as the required idempotency key field (e.g., UUID or CUID)
+  payload: Payload;
+  createdAt: string;
+}
+
+export interface EmailSendPayload {
+  to: string | string[];
+  subject: string;
+  html?: string;
+  text?: string;
+  from?: string;
+}
+
+export interface JobDemoPayload {
+  message: string;
+}
+
+export interface OutboxDrainPayload {
+  [key: string]: any;
+}
+
+export type EmailSendJob = QueueMessageContract<"email.send", EmailSendPayload>;
+export type JobDemoJob = QueueMessageContract<"job.demo", JobDemoPayload>;
+export type OutboxDrainJob = QueueMessageContract<"outbox.drain", OutboxDrainPayload>;
+export type QueueJobMessage = EmailSendJob | JobDemoJob | OutboxDrainJob | WanGenerateJob | H3GenerateJob;
+
+export type { WanGenerateJob, WanGenerateJobPayload } from "./wan-jobs";
+export { WanGenerateJobPayloadSchema, enqueueWanJob } from "./wan-jobs";
+export type { H3GenerateJob, H3GenerateJobPayload } from "./h3-jobs";
+export { H3GenerateJobPayloadSchema, enqueueH3Job } from "./h3-jobs";
+
+/**
+ * Enqueues a message to a Cloudflare Queue, ensuring that the idempotency key (message.id) is present.
+ */
+export async function sendJob(
+  queue: Queue<QueueJobMessage>,
+  message: QueueJobMessage
+): Promise<void> {
+  if (!message.id) {
+    throw new Error("Idempotency key 'id' is required for all queue messages.");
+  }
+  await queue.send(message);
+}
